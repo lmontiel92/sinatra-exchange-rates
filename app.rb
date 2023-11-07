@@ -13,9 +13,12 @@ get("/") do
   # convert the raw request to a string
   raw_data_string = raw_data.to_s
 
-  # convert the string to JSON
+  # convert the string to JSON and extract currencies
   parsed_data = JSON.parse(raw_data_string)
 
   @symbols = parsed_data.fetch("currencies")
+
+  # render a view template where I show the symbols
+  erb(:homepage)
 
 end
