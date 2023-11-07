@@ -16,4 +16,6 @@ get("/") do
   # convert the string to JSON
   parsed_data = JSON.parse(raw_data_string)
 
+  @symbols = parsed_data.fetch("currencies")
+
 end
